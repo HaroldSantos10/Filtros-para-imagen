@@ -2,12 +2,15 @@ from cgitb import text
 from email.mime import image
 from msilib.schema import ComboBox
 from os import path
-from turtle import title
+from turtle import bgcolor, color, title
 from PIL import Image, ImageTk, ImageFilter
 import tkinter as tk
 from tkinter import StringVar, Tk,Button,Label,ttk, filedialog, messagebox
 
-
+"""
+Harold Enoc Santos Morillo SMIS001621
+Meylin Nohely Reyes Medina SMIS032721
+"""
 
 def mostrar_imagen():#función que se ejecuta en el boton para cargar imagen
     #abre una ventana para solicitar un archivo(imagen en este caso) para procesar
@@ -63,13 +66,14 @@ def aplicar_filtro(event):#función que reacciona al evento bind del combobox
 #Creación de la ventana, configuración del tamaño de ventana y su título
 ventana = Tk()
 ventana.geometry("850x600")
+ventana.config(bg="#F0FFFF")
 ventana.title("Filtros para imagen")
 ruta= tk.StringVar()
 
 #instanciación del label que contendrá la imagen y el boton que permite buscarla y cargarla
 labelImage = Label(ventana, image= "")
 btnCargarImg= Button(ventana, text="Cargar la imagen", command = mostrar_imagen)
-
+btnCargarImg.config(bg="#E6E6FA")
 #instanciación del comboBox que permita la aplicación de los filtros
 filtro= StringVar()
 #en values designamos el listado de opciones que contendrá el combobox y con textvariable guardamos la selección para según esta realizar una acción u otra
